@@ -1,0 +1,163 @@
+.custom-textfield-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.custom-textfield-field {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    display: flex; /* Added for clear button alignment */
+    align-items: center; /* Added for clear button alignment */
+}
+
+.custom-textfield-field:hover:not(.disabled) .custom-textfield-fieldset {
+    border-color: rgba(0, 0, 0, 0.87);
+}
+
+.custom-textfield-field.focused .custom-textfield-fieldset {
+    border-color: #1976d2;
+    border-width: 2px;
+}
+
+.custom-textfield-field.error .custom-textfield-fieldset {
+    border-color: #d32f2f;
+}
+
+.custom-textfield-field.disabled {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.custom-textfield-label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 4px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.custom-textfield-field.focused .custom-textfield-label,
+.custom-textfield-field.has-value .custom-textfield-label {
+    top: 0;
+    font-size: 12px;
+    color: #1976d2;
+    transform: translateY(-50%);
+}
+
+.custom-textfield-field.error .custom-textfield-label {
+    color: #d32f2f;
+}
+
+.custom-textfield-input {
+    flex-grow: 1; /* Allow input to take available space */
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.87);
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.custom-textfield-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+
+.custom-textfield-input:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: default;
+}
+
+.custom-textfield-fieldset {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 8px;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-textfield-legend {
+    float: unset;
+    width: auto;
+    overflow: hidden;
+    display: block;
+    padding: 0;
+    height: 11px;
+    font-size: 0.75em;
+    visibility: hidden;
+    max-width: 0.01px;
+    transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    white-space: nowrap;
+}
+
+.custom-textfield-field.focused .custom-textfield-legend,
+.custom-textfield-field.has-value .custom-textfield-legend {
+    max-width: 1000px;
+    transition: max-width 100ms cubic-bezier(0, 0, 0.2, 1) 50ms;
+}
+
+.custom-textfield-clear-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.54);
+    transition: color 0.2s ease-in-out;
+}
+
+.custom-textfield-clear-button:hover {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .custom-textfield-wrapper {
+        width: 100%;
+    }
+
+    .custom-textfield-input {
+        min-height: 48px;
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    .custom-textfield-label {
+        font-size: 16px;
+        left: 16px;
+    }
+
+    .custom-textfield-field.focused .custom-textfield-label,
+    .custom-textfield-field.has-value .custom-textfield-label {
+        font-size: 12px;
+    }
+
+    .custom-textfield-fieldset {
+        padding: 0 12px;
+    }
+}

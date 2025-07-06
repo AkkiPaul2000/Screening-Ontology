@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+    /* Text Colors - Semantic naming */
+    --color-text-primary: #000000; /* Dark text for main content */
+    --color-text-secondary: #2d2d2d; /* Medium gray for secondary text */
+    --color-text-tertiary: oklch(0.65 0 0); /* Light gray for tertiary text */
+    --color-text-inverse: oklch(0.98 0 0); /* White text for dark backgrounds */
+    --color-text-muted: oklch(0.55 0 0); /* Muted text */
+    --color-text-accent: oklch(0.55 0.2 250); /* Accent text color (blue) */
+    --color-text-success: oklch(0.45 0.15 155); /* Success text (green) */
+    --color-text-warning: oklch(0.55 0.15 85); /* Warning text (yellow) */
+    --color-text-error: oklch(0.55 0.2 25); /* Error text (red) */
+
+    --color-bg-table-header: #eef2f3; /* Slightly darker gray  table-header-background */
+    --color-bg-table-body: #f9f9f9; /* Dark background */
+
+    /* Background Colors - Semantic naming */
+    --color-bg-primary: oklch(1 0 0); /* White background */
+    --color-bg-secondary: oklch(0.98 0 0); /* Light gray background */
+    --color-bg-muted: oklch(0.92 0 0); /* Muted background */
+    --color-bg-accent: oklch(0.55 0.2 250); /* Accent background (blue) */
+    --color-bg-accent-light: oklch(0.96 0.05 250); /* Light accent background */
+    --color-bg-success: oklch(0.45 0.15 155); /* Success background (green) */
+    --color-bg-success-light: oklch(
+        0.96 0.05 155
+    ); /* Light success background */
+    --color-bg-warning: oklch(0.55 0.15 85); /* Warning background (yellow) */
+    --color-bg-warning-light: oklch(
+        0.98 0.05 85
+    ); /* Light warning background */
+    --color-bg-error: oklch(0.55 0.2 25); /* Error background (red) */
+    --color-bg-error-light: oklch(0.96 0.05 25); /* Light error background */
+
+    /* Border Colors */
+    --color-border-primary: oklch(0.85 0 0); /* Primary border */
+    --color-border-secondary: oklch(0.9 0 0); /* Secondary border */
+    --color-border-tertiary: oklch(0.93 0 0); /* Tertiary border */
+    --color-border-accent: oklch(0.55 0.2 250); /* Accent border */
+    --color-border-success: oklch(0.45 0.15 155); /* Success border */
+    --color-border-warning: oklch(0.55 0.15 85); /* Warning border */
+    --color-border-error: oklch(0.55 0.2 25); /* Error border */
+
+    /* Surface Colors for Cards, Modals, etc. */
+    --color-surface-primary: oklch(1 0 0); /* White surface */
+    --color-surface-secondary: oklch(0.98 0 0); /* Light gray surface */
+    --color-surface-elevated: oklch(
+        1 0 0
+    ); /* Elevated surface (white with shadow) */
+    --color-surface-overlay: oklch(0.98 0 0); /* Overlay surface */
+
+    /* Interactive Colors */
+    --color-interactive-primary: oklch(0.55 0.2 250); /* Primary interactive */
+    --color-interactive-primary-hover: oklch(0.5 0.2 250); /* Primary hover */
+    --color-interactive-secondary: oklch(
+        0.75 0.1 250
+    ); /* Secondary interactive */
+    --color-interactive-secondary-hover: oklch(
+        0.7 0.1 250
+    ); /* Secondary hover */
+
+    /* Brand Colors */
+    --color-brand-primary: oklch(0.55 0.2 250); /* Main brand color (blue) */
+    --color-brand-secondary: oklch(
+        0.45 0.15 155
+    ); /* Secondary brand color (green) */
+    --color-brand-accent: oklch(
+        0.65 0.18 280
+    ); /* Accent brand color (purple) */
+
+    /* Neutral Scale */
+    --color-neutral-50: oklch(0.99 0 0);
+    --color-neutral-100: oklch(0.96 0 0);
+    --color-neutral-200: oklch(0.92 0 0);
+    --color-neutral-300: oklch(0.85 0 0);
+    --color-neutral-400: oklch(0.75 0 0);
+    --color-neutral-500: oklch(0.65 0 0);
+    --color-neutral-600: oklch(0.55 0 0);
+    --color-neutral-700: oklch(0.45 0 0);
+    --color-neutral-800: oklch(0.3 0 0);
+    --color-neutral-900: oklch(0.2 0 0);
+    --color-neutral-950: oklch(0.1 0 0);
+
+    /* custom modal-bg colors */
+    --color-header-modal: #dee2ff;
+    --color-primary-modal: #2d2d2d;
+    --color-secondary-modal: #80828e;
+
+    /* Spacing Scale */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 3rem; /* 48px */
+    --spacing-3xl: 4rem; /* 64px */
+
+    /* Shadow Scale */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md:
+        0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg:
+        0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl:
+        0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+    /* Typography Scale */
+    --font-size-xs: 0.75rem; /* 12px */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-base: 1rem; /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.25rem; /* 20px */
+    --font-size-2xl: 1.5rem; /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --font-size-4xl: 2.25rem; /* 36px */
+
+    /* Border Radius */
+    --radius-xs: 0.125rem; /* 2px */
+    --radius-sm: 0.25rem; /* 4px */
+    --radius-md: 0.375rem; /* 6px */
+    --radius-lg: 0.5rem; /* 8px */
+    --radius-xl: 0.75rem; /* 12px */
+    --radius-2xl: 1rem; /* 16px */
+    --radius-full: 9999px; /* Full rounded */
+}
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+button {
+    cursor: pointer;
+}

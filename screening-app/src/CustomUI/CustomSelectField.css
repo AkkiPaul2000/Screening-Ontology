@@ -1,0 +1,207 @@
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.custom-select-field {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-select-field:hover:not(.disabled) .custom-select-fieldset {
+    border-color: rgba(0, 0, 0, 0.87);
+}
+
+.custom-select-field.focused .custom-select-fieldset {
+    border-color: #1976d2;
+    border-width: 2px;
+}
+
+.custom-select-field.error .custom-select-fieldset {
+    border-color: #d32f2f;
+}
+
+.custom-select-field.disabled {
+    cursor: default;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.custom-select-label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 4px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.custom-select-field.focused .custom-select-label,
+.custom-select-field.has-value .custom-select-label {
+    top: 0;
+    font-size: 12px;
+    color: #1976d2;
+    transform: translateY(-50%);
+}
+
+.custom-select-field.error .custom-select-label {
+    color: #d32f2f;
+}
+
+.custom-select-input {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 12px 14px;
+    position: relative;
+}
+
+.custom-select-value {
+    flex: 1;
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.87);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.custom-select-arrow {
+    color: rgba(0, 0, 0, 0.54);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.custom-select-arrow.open {
+    transform: rotate(180deg);
+}
+
+.custom-select-fieldset {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 8px;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-select-legend {
+    float: unset;
+    width: auto;
+    overflow: hidden;
+    display: block;
+    padding: 0;
+    height: 11px;
+    font-size: 0.75em;
+    visibility: hidden;
+    max-width: 0.01px;
+    transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    white-space: nowrap;
+}
+
+.custom-select-field.focused .custom-select-legend,
+.custom-select-field.has-value .custom-select-legend {
+    max-width: 1000px;
+    transition: max-width 100ms cubic-bezier(0, 0, 0.2, 1) 50ms;
+}
+
+.custom-select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow:
+        0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    z-index: 1300;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+
+.custom-select-option {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-select-option:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.custom-select-option.selected {
+    background-color: rgba(25, 118, 210, 0.08);
+    color: #1976d2;
+}
+
+.custom-select-field:focus {
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .custom-select-wrapper {
+        width: 100%;
+    }
+
+    .custom-select-input {
+        min-height: 48px;
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    .custom-select-label {
+        font-size: 16px;
+        left: 16px;
+    }
+
+    .custom-select-field.focused .custom-select-label,
+    .custom-select-field.has-value .custom-select-label {
+        font-size: 12px;
+    }
+
+    .custom-select-fieldset {
+        padding: 0 12px;
+    }
+
+    .custom-select-dropdown {
+        font-size: 16px;
+    }
+
+    .custom-select-option {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
